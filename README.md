@@ -1,7 +1,7 @@
 
 # Sarcoma-TC-Clusters
 
-This repository contains scripts and data for the analysis and validation of transcriptomic clusters in sarcoma using publicly available datasets and statistical frameworks. The project includes the implementation of machine learning models, survival analysis, gene expression analysis, and validation through multiple pipelines.
+This repository contains scripts and data for the analysis for the publication "Machine learning-based analysis of genomic and transcriptomic data unveils sarcoma clusters with superlative prognostic and predictive value". 
 
 ---
 
