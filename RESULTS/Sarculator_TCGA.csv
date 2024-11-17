@@ -1,0 +1,130 @@
+;Patient;site_of_resection;age;tumour_size;FNCLCC_GRADE;PaperHistology;focal;residual_tumor;Sarculator (5 Year OS)
+1;TCGA-HS-A5N7-01A-21R-A26T-07;Retroperitoneum;67;9.2;2;leiomyosarcoma - soft tissue;NO;complete;0.81
+2;TCGA-DX-A3LS-01A-11R-A21T-07;Retroperitoneum;78;13.2;3;dedifferentiated liposarcoma;YES;complete;0.18
+3;TCGA-IE-A3OV-01A-11R-A22K-07;Connective, subcutaneous and other soft tissues of lower limb and hip;42;10.5;2;leiomyosarcoma - soft tissue;NO;complete;0.74
+4;TCGA-FX-A2QS-01A-11R-A21T-07;Retroperitoneum;61;11.5;3;dedifferentiated liposarcoma;NO;complete;0.71
+10;TCGA-MB-A5YA-01A-11R-A29R-07;Retroperitoneum;63;8.5;2;undifferentiated pleomorphic sarcoma;NO;complete;0.81
+12;TCGA-DX-A3U9-01A-11R-A30C-07;Retroperitoneum;84;6.4;2;leiomyosarcoma - soft tissue;NO;complete;0.73
+13;TCGA-DX-AB37-01A-11R-A41I-07;Connective, subcutaneous and other soft tissues of lower limb and hip;73;17;3;dedifferentiated liposarcoma;NO;complete;0.43
+17;TCGA-IS-A3K7-01A-11R-A21T-07;Uterus, NOS;63;10;2;leiomyosarcoma - gynecologic;YES;complete;0.67
+18;TCGA-MJ-A68H-01A-11R-A30C-07;Retroperitoneum;57;5;2;leiomyosarcoma - gynecologic;NO;complete;0.90
+23;TCGA-DX-A1L0-01A-11R-A24X-07;Retroperitoneum;58;27;2;dedifferentiated liposarcoma;NO;complete;0.75
+28;TCGA-WK-A8XQ-01A-11R-A37L-07;Retroperitoneum;57;36.5;3;undifferentiated pleomorphic sarcoma;NO;incomplete;0.15
+30;TCGA-K1-A42X-01A-11R-A24X-07;Uterus, NOS;62;7;2;leiomyosarcoma - gynecologic;NO;complete;0.76
+31;TCGA-HS-A5N8-01A-11R-A26T-07;Uterus, NOS;69;10;2;leiomyosarcoma - gynecologic;NO;incomplete;0.62
+33;TCGA-DX-A3UB-01A-11R-A30C-07;Retroperitoneum;54;2.7;1;leiomyosarcoma - soft tissue;NO;complete;0.99
+35;TCGA-PC-A5DO-01A-11R-A26T-07;Retroperitoneum;59;6;2;leiomyosarcoma - soft tissue;NO;complete;0.88
+36;TCGA-DX-AB2F-01A-11R-A38C-07;Retroperitoneum;76;27;2;dedifferentiated liposarcoma;NO;complete;0.61
+37;TCGA-FX-A3RE-01A-11R-A22K-07;Ovary;65;20;2;leiomyosarcoma - gynecologic;YES;incomplete;0.44
+39;TCGA-DX-A23Y-01A-11R-A27Q-07;Retroperitoneum;80;20;3;dedifferentiated liposarcoma;YES;complete;0.06
+41;TCGA-3B-A9HZ-01A-11R-A39D-07;Connective, subcutaneous and other soft tissues of thorax;66;9.5;2;leiomyosarcoma - soft tissue;NO;complete;0.66
+42;TCGA-X6-A8C5-01A-11R-A36F-07;Retroperitoneum;63;15.3;2;leiomyosarcoma - soft tissue;NO;complete;0.73
+44;TCGA-3B-A9HI-01A-11R-A38C-07;Connective, subcutaneous and other soft tissues of upper limb and shoulder;68;8;3;undifferentiated pleomorphic sarcoma;NO;complete;0.74
+46;TCGA-DX-A3LY-01B-11R-A27Q-07;Retroperitoneum;66;18.2;2;dedifferentiated liposarcoma;NO;complete;0.76
+47;TCGA-DX-A6BB-01A-12R-A32Q-07;Retroperitoneum;74;19;2;leiomyosarcoma - soft tissue;NO;complete;0.56
+49;TCGA-DX-A7EN-01A-11R-A39D-07;Retroperitoneum;53;8;3;leiomyosarcoma - soft tissue;NO;complete;0.72
+52;TCGA-3B-A9HV-01A-11R-A39D-07;Uterus, NOS;48;14.9;3;leiomyosarcoma - gynecologic;YES;incomplete;0.51
+55;TCGA-DX-A1KZ-01A-11R-A24X-07;Retroperitoneum;66;30;2;dedifferentiated liposarcoma;NO;complete;0.70
+56;TCGA-DX-A2J0-01A-11R-A21T-07;Retroperitoneum;61;25;2;dedifferentiated liposarcoma;NO;complete;0.75
+62;TCGA-WK-A8XY-01A-11R-A37L-07;Retroperitoneum;53;32;3;leiomyosarcoma - soft tissue;YES;complete;0.11
+63;TCGA-IW-A3M6-01A-11R-A21T-07;Uterus, NOS;59;13.5;2;leiomyosarcoma - gynecologic;NO;complete;0.62
+64;TCGA-WK-A8XX-01A-11R-A37L-07;Retroperitoneum;70;7;2;leiomyosarcoma - soft tissue;NO;complete;0.63
+65;TCGA-DX-A3UF-01A-11R-A30C-07;Retroperitoneum;65;3.7;2;leiomyosarcoma - soft tissue;YES;complete;0.76
+66;TCGA-DX-A8BZ-01A-11R-A37L-07;Connective, subcutaneous and other soft tissues of pelvis;78;8;3;undifferentiated pleomorphic sarcoma;NO;complete;0.67
+68;TCGA-WP-A9GB-01A-11R-A37L-07;Myometrium;59;29.5;3;leiomyosarcoma - gynecologic;NO;incomplete;0.14
+72;TCGA-IE-A4EK-01A-11R-A24X-07;Retroperitoneum;54;6.5;1;leiomyosarcoma - soft tissue;NO;complete;0.99
+73;TCGA-DX-AB2H-01A-11R-A39D-07;Retroperitoneum;80;15.1;3;dedifferentiated liposarcoma;YES;complete;0.12
+74;TCGA-HB-A3L4-01A-11R-A21T-07;Uterus, NOS;46;18;3;leiomyosarcoma - gynecologic;NO;complete;0.45
+75;TCGA-X2-A95T-01A-11R-A37L-07;Uterus, NOS;49;7;3;leiomyosarcoma - gynecologic;NO;complete;0.71
+76;TCGA-K1-A42W-01A-11R-A24X-07;Retroperitoneum;65;3.5;2;leiomyosarcoma - soft tissue;NO;complete;0.89
+77;TCGA-DX-A48J-01A-21R-A30C-07;Retroperitoneum;44;22;2;leiomyosarcoma - soft tissue;NO;complete;0.68
+78;TCGA-3B-A9HQ-01A-11R-A38C-07;Retroperitoneum;66;6.5;2;leiomyosarcoma - soft tissue;NO;complete;0.85
+81;TCGA-DX-AB36-01A-11R-A41I-07;Connective, subcutaneous and other soft tissues of thorax;86;8.1;2;dedifferentiated liposarcoma;NO;complete;0.69
+88;TCGA-DX-A7ES-01A-31R-A39D-07;Retroperitoneum;50;22;2;dedifferentiated liposarcoma;YES;complete;0.55
+91;TCGA-DX-A48K-01A-11R-A30C-07;Connective, subcutaneous and other soft tissues of lower limb and hip;65;4.1;2;leiomyosarcoma - soft tissue;NO;complete;0.84
+92;TCGA-IE-A4EH-01A-11R-A24X-07;Corpus uteri;35;4.9;2;leiomyosarcoma - gynecologic;NO;complete;0.88
+93;TCGA-DX-A6BH-01A-12R-A30C-07;Retroperitoneum;34;8;2;dedifferentiated liposarcoma;NO;complete;0.89
+94;TCGA-DX-AB2G-01A-11R-A39D-07;Retroperitoneum;36;36;2;dedifferentiated liposarcoma;YES;complete;0.48
+97;TCGA-DX-A240-01A-32R-A27Q-07;Spermatic cord;51;13.5;2;dedifferentiated liposarcoma;NO;complete;0.79
+98;TCGA-IF-A4AJ-01A-11R-A24X-07;Long bones of lower limb and associated joints;80;10;2;leiomyosarcoma - soft tissue;NO;complete;0.52
+101;TCGA-DX-A3U6-01A-11R-A29R-07;Retroperitoneum;63;8.5;2;dedifferentiated liposarcoma;NO;complete;0.89
+103;TCGA-DX-A2IZ-01A-11R-A21T-07;Retroperitoneum;60;29;3;dedifferentiated liposarcoma;NO;complete;0.51
+104;TCGA-DX-A1KX-01A-22R-A24X-07;Retroperitoneum;67;12.6;2;undifferentiated pleomorphic sarcoma;NO;complete;0.70
+105;TCGA-DX-A3M2-01A-21R-A22K-07;Retroperitoneum;59;10;2;undifferentiated pleomorphic sarcoma;NO;complete;0.80
+110;TCGA-FX-A3NJ-01A-11R-A21T-07;Retroperitoneum;54;7;1;leiomyosarcoma - soft tissue;NO;complete;0.86
+112;TCGA-DX-A6BG-01A-11R-A30C-07;Retroperitoneum;51;10.8;2;dedifferentiated liposarcoma;YES;complete;0.74
+116;TCGA-DX-A48N-01A-11R-A30C-07;Retroperitoneum;47;13;2;dedifferentiated liposarcoma;YES;complete;0.69
+117;TCGA-DX-A3UC-01A-11R-A30C-07;Retroperitoneum;37;7;2;leiomyosarcoma - soft tissue;NO;complete;0.87
+118;TCGA-DX-A1L4-01A-12R-A26T-07;Retroperitoneum;60;19.5;2;dedifferentiated liposarcoma;NO;complete;0.78
+121;TCGA-PC-A5DL-01A-11R-A26T-07;Retroperitoneum;67;11;2;leiomyosarcoma - soft tissue;NO;incomplete;0.65
+122;TCGA-DX-A3U5-01A-11R-A22K-07;Retroperitoneum;52;10.6;2;dedifferentiated liposarcoma;NO;complete;0.89
+124;TCGA-DX-A1L3-01A-11R-A24X-07;Retroperitoneum;60;20;2;dedifferentiated liposarcoma;NO;complete;0.78
+126;TCGA-DX-A3UD-01A-11R-A30C-07;Retroperitoneum;56;8.5;2;leiomyosarcoma - soft tissue;YES;complete;0.78
+127;TCGA-DX-A48R-01A-11R-A30C-07;Retroperitoneum;41;18;1;leiomyosarcoma - soft tissue;NO;complete;0.97
+133;TCGA-KF-A41W-01A-11R-A24X-07;Uterus, NOS;71;8.5;2;leiomyosarcoma - gynecologic;NO;incomplete;0.65
+134;TCGA-KD-A5QT-01A-11R-A27Q-07;Uterus, NOS;69;13;3;leiomyosarcoma - gynecologic;NO;complete;0.39
+135;TCGA-3B-A9HU-01A-11R-A39D-07;Retroperitoneum;53;7.9;2;leiomyosarcoma - soft tissue;NO;complete;0.87
+136;TCGA-DX-AB3A-01A-11R-A41I-07;Retroperitoneum;80;1.2;3;dedifferentiated liposarcoma;NO;complete;0.78
+137;TCGA-DX-A6B9-01A-12R-A32Q-07;Overlapping lesion of connective, subcutaneous and other soft tissues;45;15;1;leiomyosarcoma - soft tissue;NO;complete;0.86
+138;TCGA-3B-A9I3-01A-11R-A39D-07;Retroperitoneum;62;9;1;leiomyosarcoma - soft tissue;NO;complete;0.98
+139;TCGA-PC-A5DK-01A-11R-A27Q-07;Retroperitoneum;63;10;1;leiomyosarcoma - soft tissue;NO;complete;0.98
+140;TCGA-DX-A1KW-01A-22R-A24X-07;Retroperitoneum;67;24.5;2;dedifferentiated liposarcoma;NO;complete;0.71
+144;TCGA-PC-A5DN-01A-12R-A27Q-07;Retroperitoneum;77;20;2;dedifferentiated liposarcoma;NO;complete;0.64
+145;TCGA-HB-A5W3-01A-11R-A29R-07;Retroperitoneum;58;26;1;leiomyosarcoma - soft tissue;NO;complete;0.97
+146;TCGA-X9-A971-01A-11R-A38C-07;Connective, subcutaneous and other soft tissues of upper limb and shoulder;52;3.8;2;leiomyosarcoma - soft tissue;NO;complete;0.88
+147;TCGA-IE-A4EI-01A-11R-A24X-07;Connective, subcutaneous and other soft tissues of lower limb and hip;67;6.5;2;leiomyosarcoma - soft tissue;NO;complete;0.75
+153;TCGA-DX-A23T-01A-11R-A26T-07;Retroperitoneum;40;30;2;dedifferentiated liposarcoma;NO;complete;0.75
+154;TCGA-3B-A9I0-01A-11R-A39D-07;Retroperitoneum;33;18;2;leiomyosarcoma - soft tissue;NO;complete;0.69
+156;TCGA-3B-A9HL-01A-11R-A38C-07;Specified parts of peritoneum;67;18;2;dedifferentiated liposarcoma;NO;complete;0.64
+157;TCGA-JV-A5VE-01A-11R-A29R-07;Uterus, NOS;60;20;2;leiomyosarcoma - gynecologic;NO;complete;0.49
+158;TCGA-DX-A23R-01A-11R-A26T-07;Retroperitoneum;55;21;2;dedifferentiated liposarcoma;NO;complete;0.79
+159;TCGA-KD-A5QS-01A-11R-A27Q-07;Myometrium;55;11;3;leiomyosarcoma - gynecologic;NO;incomplete;0.56
+161;TCGA-WK-A8XO-01A-11R-A37L-07;Retroperitoneum;66;5;3;dedifferentiated liposarcoma;YES;complete;0.60
+162;TCGA-IS-A3K6-01A-11R-A21T-07;Uterus, NOS;55;8.5;2;leiomyosarcoma - gynecologic;YES;incomplete;0.75
+163;TCGA-DX-A7EM-01A-11R-A36F-07;Retroperitoneum;61;4;2;leiomyosarcoma - soft tissue;NO;complete;0.90
+166;TCGA-3B-A9HR-01A-11R-A38C-07;Connective, subcutaneous and other soft tissues of lower limb and hip;38;8;2;leiomyosarcoma - soft tissue;NO;complete;0.80
+167;TCGA-DX-A6BF-01A-11R-A30C-07;Retroperitoneum;82;38.3;3;dedifferentiated liposarcoma;YES;complete;0.03
+168;TCGA-FX-A3NK-01A-11R-A21T-07;Stomach, NOS;53;8.5;2;dedifferentiated liposarcoma;YES;complete;0.85
+169;TCGA-3B-A9I1-01A-11R-A39D-07;Uterus, NOS;56;18;2;leiomyosarcoma - gynecologic;YES;incomplete;0.56
+178;TCGA-JV-A75J-01A-11R-A32Q-07;Uterus, NOS;43;18;3;leiomyosarcoma - gynecologic;YES;incomplete;0.47
+179;TCGA-WK-A8XS-01A-11R-A37L-07;Stomach, NOS;58;7.6;2;leiomyosarcoma - soft tissue;NO;complete;0.76
+181;TCGA-DX-A48L-01A-11R-A30C-07;Connective, subcutaneous and other soft tissues of lower limb and hip;49;6.3;1;leiomyosarcoma - soft tissue;NO;complete;0.83
+183;TCGA-DX-AB35-01A-21R-A41I-07;Descending colon;65;18.5;2;dedifferentiated liposarcoma;YES;complete;0.64
+185;TCGA-DX-A3U7-01A-11R-A29R-07;Connective, subcutaneous and other soft tissues of lower limb and hip;67;9.2;2;leiomyosarcoma - soft tissue;NO;complete;0.66
+186;TCGA-3B-A9HO-01A-11R-A38C-07;Retroperitoneum;75;25;2;dedifferentiated liposarcoma;NO;complete;0.62
+188;TCGA-DX-A7EL-01A-12R-A36F-07;Retroperitoneum;56;7;2;leiomyosarcoma - soft tissue;NO;complete;0.88
+189;TCGA-DX-A2J4-01A-32R-A21T-07;Retroperitoneum;60;22;2;dedifferentiated liposarcoma;NO;complete;0.76
+191;TCGA-DX-A6BE-01A-41R-A32Q-07;Retroperitoneum;77;21;2;dedifferentiated liposarcoma;NO;complete;0.63
+192;TCGA-DX-A3U8-01A-11R-A29R-07;Retroperitoneum;43;4.5;2;undifferentiated pleomorphic sarcoma;YES;complete;0.74
+194;TCGA-DX-A3UA-01A-12R-A30C-07;Short bones of lower limb and associated joints;47;4.5;2;leiomyosarcoma - soft tissue;NO;complete;0.88
+196;TCGA-X6-A7WD-01A-21R-A355-07;Connective, subcutaneous and other soft tissues of lower limb and hip;63;8;3;leiomyosarcoma - soft tissue;NO;complete;0.89
+197;TCGA-DX-A48P-01A-11R-A30C-07;Retroperitoneum;54;4.2;1;leiomyosarcoma - soft tissue;NO;complete;0.99
+198;TCGA-DX-A1KU-01A-32R-A24X-07;Retroperitoneum;82;33;2;dedifferentiated liposarcoma;YES;incomplete;0.07
+200;TCGA-DX-A3M1-01A-11R-A22K-07;Retroperitoneum;79;17;2;dedifferentiated liposarcoma;YES;incomplete;0.18
+204;TCGA-DX-A48U-01A-11R-A30C-07;Retroperitoneum;57;30;2;leiomyosarcoma - soft tissue;NO;complete;0.66
+207;TCGA-DX-A48O-01A-11R-A30C-07;Retroperitoneum;63;17;2;leiomyosarcoma - soft tissue;NO;complete;0.70
+208;TCGA-DX-A3LU-01A-11R-A21T-07;Retroperitoneum;60;19;2;dedifferentiated liposarcoma;NO;complete;0.79
+209;TCGA-DX-A3LT-01A-12R-A21T-07;Connective, subcutaneous and other soft tissues of upper limb and shoulder;62;20;2;dedifferentiated liposarcoma;NO;complete;0.64
+212;TCGA-DX-A1KY-01A-11R-A24X-07;Retroperitoneum;66;39.5;2;dedifferentiated liposarcoma;NO;complete;0.71
+214;TCGA-3B-A9HP-01A-11R-A38C-07;Retroperitoneum;57;11.5;2;leiomyosarcoma - gynecologic;NO;complete;0.82
+218;TCGA-3B-A9HX-01A-11R-A39D-07;Retroperitoneum;70;4;3;leiomyosarcoma - soft tissue;YES;complete;0.46
+219;TCGA-HB-A43Z-01A-11R-A24X-07;Uterus, NOS;58;10;3;leiomyosarcoma - gynecologic;NO;complete;0.57
+224;TCGA-DX-A6B7-01A-11R-A30C-07;Retroperitoneum;55;11.5;2;leiomyosarcoma - soft tissue;NO;complete;0.82
+225;TCGA-FX-A48G-01A-11R-A24X-07;Uterus, NOS;56;13;2;leiomyosarcoma - gynecologic;YES;incomplete;0.65
+227;TCGA-IW-A3M4-01A-11R-A21T-07;Uterus, NOS;48;9;2;leiomyosarcoma - gynecologic;NO;complete;0.76
+231;TCGA-DX-A3LW-01A-21R-A21T-07;Retroperitoneum;43;17;2;dedifferentiated liposarcoma;NO;complete;0.81
+235;TCGA-X6-A7WC-01A-12R-A355-07;Connective, subcutaneous and other soft tissues of lower limb and hip;74;11.1;3;undifferentiated pleomorphic sarcoma;NO;complete;0.62
+236;TCGA-QQ-A5VB-01A-11R-A36F-07;Connective, subcutaneous and other soft tissues, NOS;53;13.2;2;leiomyosarcoma - soft tissue;NO;complete;0.66
+237;TCGA-DX-A23V-01A-11R-A29R-07;Retroperitoneum;57;13;2;dedifferentiated liposarcoma;YES;complete;0.69
+239;TCGA-DX-A2J1-01A-11R-A21T-07;Retroperitoneum;53;31;2;dedifferentiated liposarcoma;NO;complete;0.76
+240;TCGA-SG-A6Z7-01A-12R-A32Q-07;Retroperitoneum;44;30;3;dedifferentiated liposarcoma;NO;incomplete;0.34
+245;TCGA-DX-A6Z2-01A-12R-A36F-07;Retroperitoneum;82;7.2;2;leiomyosarcoma - soft tissue;NO;complete;0.73
+247;TCGA-FX-A76Y-01A-11R-A355-07;Uterus, NOS;49;10;2;leiomyosarcoma - gynecologic;NO;complete;0.74
+254;TCGA-3B-A9HY-01A-11R-A39D-07;Connective, subcutaneous and other soft tissues of lower limb and hip;49;2.6;2;leiomyosarcoma - soft tissue;NO;complete;0.91
+255;TCGA-DX-A7EI-01A-11R-A33J-07;Retroperitoneum;78;6;2;dedifferentiated liposarcoma;YES;complete;0.68
+256;TCGA-KD-A5QU-01A-11R-A27Q-07;Uterus, NOS;41;9;3;leiomyosarcoma - gynecologic;NO;complete;0.67
+257;TCGA-DX-A6BA-01A-11R-A30C-07;Retroperitoneum;53;28;3;leiomyosarcoma - soft tissue;NO;complete;0.40
+258;TCGA-QQ-A5VC-01A-31R-A32Q-07;Connective, subcutaneous and other soft tissues, NOS;63;3.5;3;leiomyosarcoma - soft tissue;NO;complete;0.79
+262;TCGA-DX-A3UE-01A-11R-A30C-07;Connective, subcutaneous and other soft tissues of trunk, NOS;66;6.6;2;leiomyosarcoma - soft tissue;NO;complete;0.75
+264;TCGA-DX-A1L1-01A-11R-A24X-07;Retroperitoneum;60;8.5;2;dedifferentiated liposarcoma;YES;complete;0.77
+265;TCGA-3B-A9HT-01A-11R-A39D-07;Tongue, NOS;53;4;2;leiomyosarcoma - soft tissue;NO;complete;0.88
