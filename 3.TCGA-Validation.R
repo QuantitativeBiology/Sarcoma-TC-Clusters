@@ -20,6 +20,11 @@ cinsarc <- read.csv("RESULTS/clinical_cinsarc_paper.csv")
 
 sarculator <- read.csv("RESULTS/Sarculator_TCGA.csv", sep=";")
 
+file_path <- "RESULTS/Consensus_Clusters_Genes.txt"
+
+cinsarc_genes <-  c("MKI67", "AURKA", "BIRC5", "CCNB1", "MYBL2", "ESR1", "PGR", "BCL2", 
+                    "SCUBE2", "MMP11", "CTSL2", "GRB7", "ERBB2", "ACTB", "GAPDH", "GUS", 
+                    "RPLP0", "TFRC", "GSTM1", "CD68", "BAG1")
 
 clinical_data <- clinical_data[clinical_data$Histology %in% c("Leiomyosarcoma, NOS", "Dedifferentiated liposarcoma"),]
 
@@ -44,26 +49,38 @@ Voom <- voom(RNA_data, plot = FALSE,normalize.method = "quantile")
 
 normalized <- Voom$E
 
-c1_over <- c("CCND2", "SOX18", "CBFA2T3", "PAX5", "CCL19", "CX3CL1", "PNOC", "OLFM1", 
-             "BCAM", "ECSCR", "PLVAP", "CD79B", "TTYH1", "GRM4", "CDK4", "ERG", "DTX1", "FMOD", "ZBTB46", "NKD1")
+read_gene_lists <- function(file_path) {
+  # Read all lines from the file
+  lines <- readLines(file_path)
+  
+  # Initialize variables
+  lists <- list()
+  current_list_name <- NULL
+  
+  # Iterate through each line
+  for (line in lines) {
+    line <- trimws(line)  # Remove extra whitespace from the line
+    
+    if (grepl(":", line)) {  # If the line defines a list name
+      current_list_name <- sub(":", "", line)  # Extract list name
+      current_list_name <- trimws(current_list_name)  # Remove any extra spaces from the name
+      lists[[current_list_name]] <- character(0)  # Initialize the list
+    } else if (nchar(line) > 0 && !is.null(current_list_name)) {
+      # Append elements to the current list
+      lists[[current_list_name]] <- c(lists[[current_list_name]], unlist(strsplit(line, ",\\s*")))
+    }
+  }
+  
+  # Assign each list to a variable in the global environment
+  for (name in names(lists)) {
+    assign(name, lists[[name]], envir = .GlobalEnv)
+  }
+  
+  return(lists)
+}
 
-c1_under <- c("RRAGC", "RAC1", "CCNB2", "KIF23", "NEK2", "PBK", "GMNN", "AURKA", "CCNA2", "WHSC1", "NUF2", "CDCA8", "UBE2T", "XPO1", "ANLN", "ECT2", "MALT1", "RRM2", "CRNDE", "CCNB1", "CDKN3", "CDC25C", "TOP2A", "STIL", "BUB1B", "CHEK1", "TTK", "MCM4", "CDCA5", "BUB1", "EXO1", "CEP55", "CDC20", "UBE2C", "ABL2", "DEK", "BRCA1", "FGFR1OP", "PTTG1", "SNW1", "PALB2", "CENPF", "RAD51AP1", "AURKB", "NDC80", "TPX2", "TYMS", "RAD54L", "FANCD2", "BRIP1", "MELK", "GINS2", "CENPM", "KIF2C", "RAD51", "HIST1H3B", "BRCA2", "EPS15")
-
-c2_over <- c("MAGEC2", "SSX2", "SSX1", "MAGEA3", "MAGEA12", "SSX3", "MAGEB2", "SSX2B", "MAGEA2B", "FZD6", "MAGEB1", "JAZF1", "ACVR1C", "BAP1", "CTNNB1", "RGS16", "MMP11", "MRAS")
-
-c2_under <- c("DHX58", "IL12A", "TNFRSF1B", "MAP3K8", "SULT1A1", "LILRB5")
-
-c3_over <- c("HAVCR2", "FCGR3B", "CYBB", "LCP1", "CCL2", "HLA.DMA", "FPR3", "ITGB2", "CXCL10", "CD84", "HLA.DMB", "CSF2", "HMGA1", "BTK", "HLA.DRA", "IL21R", "GMFG", "CYLD", "ATIC", "CCL18", "LAIR1", "PLEK2", "CCR5", "JAML", "IL7R", "RGS10", "HLA.DRB1", "SYK", "FAM26F", "BATF", "NFKB2", "CD74", "PSMB10", "ETV5", "TGFB1", "FGR", "SERPINE1", "SEMA7A", "CD3G", "HLA.DQA1", "GBP5", "PHF11", "HLA.DOA", "FN1", "KCNMA1")
-
-c3_under <- c("TCF7L1", "PBX1", "SMAD9", "FZD7", "BCL9", "TP53INP2", "SCUBE2", "NRTN", "DHH", "TET1", "FOXO1", "FGFR3", "HAP1", "AXIN2", "FOXO6", "HES1", "BMP4", "GAS1", "CDKN1C", "SESN3", "PDGFD", "LINC00598", "ZNF521", "SEMA6D", "CITED4", "SH3PXD2A", "WNT11", "GPC4", "TMEM38A", "TRIM2", "DOT1L", "FOXC1", "DCLK1", "PRKACG", "KDM5C", "FGFR2", "PHLPP1", "FOXO4", "TCF7L2", "CDKN2A")
-
-c4_over <- c("PHLPP1", "IL6ST", "DDR2", "TP73", "FAM64A", "SYCP3", "CLDN4", "LINC.ROR", "CLCA2", "SMAD3", "GAS7", "CFD", "PDGFD", "ADRB2", "PGR", "CD34", "TEK")
-
-c4_under <- c("HOPX", "FZD2", "NBEAP1", "ACTN1")
-
-cinsarc_genes <-  c("MKI67", "AURKA", "BIRC5", "CCNB1", "MYBL2", "ESR1", "PGR", "BCL2", 
-                    "SCUBE2", "MMP11", "CTSL2", "GRB7", "ERBB2", "ACTB", "GAPDH", "GUS", 
-                    "RPLP0", "TFRC", "GSTM1", "CD68", "BAG1")
+# Call the function to read and assign variables
+gene_lists <- read_gene_lists(file_path)
 
 united_gene_sets <- list(
   c1 = c(c1_over, c1_under),
