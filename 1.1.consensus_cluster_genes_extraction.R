@@ -371,16 +371,18 @@ list_names <- c("c1_over", "c1_under", "c2_over", "c2_under", "c3_over", "c3_und
 # Create a vector with the corresponding lists
 lists <- list(c1_over, c1_under, c2_over, c2_under, c3_over, c3_under, c4_over, c4_under)
 
+if (!file.exists(output_file)){
 # Create a file connection for writing
-file_conn <- file("RESULTS/Consensus_Clusters_Genes.txt", open = "wt")
-
-# Loop through the lists and write them to the file
-for(i in seq_along(lists)) {
-  cat(paste(list_names[i], ":\n", toString(lists[[i]]), "\n\n"), file = file_conn)
+  file_conn <- file("RESULTS/Consensus_Clusters_Genes.txt", open = "wt")
+  
+  # Loop through the lists and write them to the file
+  for(i in seq_along(lists)) {
+    cat(paste(list_names[i], ":\n", toString(lists[[i]]), "\n\n"), file = file_conn)
+  }
+  
+  # Close the file connection
+  close(file_conn)
 }
-
-# Close the file connection
-close(file_conn)
 
 
 

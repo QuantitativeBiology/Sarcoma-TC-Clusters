@@ -131,12 +131,12 @@ column_ha = HeatmapAnnotation(
                                 "C3" = "pink",
                                 "C4" = "yellow"),
              Histopathological = c("DDLPS" = "red",
-                                          "LMS" = "green",
-                                          "UPS" = "lightblue"),
-  Local_Recurrence = c("1"= "black",
-                       "0" = "white"),
-  Distant_Recurrence = c("1"= "black",
-                         "0" = "white")
+                                   "LMS" = "green",
+                                   "UPS" = "lightblue"),
+             Local_Recurrence = c("1"= "black",
+                                  "0" = "white"),
+             Distant_Recurrence = c("1"= "black",
+                                    "0" = "white")
   )
 )
 
@@ -191,5 +191,3 @@ ggplot(cdk4_data, aes(x = factor(Cluster), y = HLA.DMA)) +
     axis.text = element_text(color = "black"),  # Black axis text
     panel.border = element_rect(color = "black", fill = NA, size = 1)  # Border around plot
   )
-
-

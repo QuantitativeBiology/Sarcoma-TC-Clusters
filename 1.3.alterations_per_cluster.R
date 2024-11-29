@@ -87,8 +87,4 @@ combined_plot <- (plots[[1]] + plots[[2]]) / (plots[[3]] + plots[[4]]) +
   theme(legend.position = 'bottom')
 
 # Print the combined plot
-print(combined_plot)
-
-
-
-
+print(combined_plot) 

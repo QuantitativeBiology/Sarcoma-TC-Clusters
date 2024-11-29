@@ -99,10 +99,9 @@ tc_sarculator_age <- cox$concordance["concordance"]
 concordance_values <- data.frame(
   Model = c("SARCULATOR", "TC + SARCULATOR", 
             "TC",
-            "Age",
             "TC + Age"),
   Concordance = c(sarculator, tc_sarculator, 
-                  tc, Age,
+                  tc,
                   tc_age)
 )
 
@@ -113,17 +112,31 @@ concordance_values$Color <- ifelse(grepl("TC", concordance_values$Model), "orang
 
 concordance_values$Label <- ifelse(grepl("TC", concordance_values$Model), "Includes TC", "Does Not Include TC")
 
+concordance_values$Label
 
 # Plot the ordered barplot with conditional coloring and a legend
 ggplot(concordance_values, aes(x = reorder(Model, Concordance), y = Concordance, fill = Label)) +
-  geom_bar(stat = "identity") +
-  geom_text(aes(label = round(Concordance, 2)), hjust = -0.1, size = 4) +
+  geom_bar(stat = "identity", width = 0.6) +  # Narrower bars for a clean look
+  geom_text(aes(label = round(Concordance, 2)), hjust = -0.1, size = 3.5, family = "Helvetica") +  # Consistent font style
   coord_flip() +
   xlab("Model") +
-  ylab("Concordance") +
+  ylab("Concordance Index") +
   ggtitle("Concordance Indexes of Different Models") +
-  theme_minimal() +
-  scale_fill_manual(values = c("Includes TC" = "darkorange1", "Does Not Include TC" = "skyblue"))  
+  theme_classic(base_size = 12, base_family = "Helvetica") +  # Clean, professional theme
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),  # Center-aligned title
+    axis.title.x = element_text(size = 12),
+    axis.title.y = element_text(size = 12),
+    axis.text = element_text(size = 10),
+    legend.title = element_blank(),  # Nature-style plots often omit legend titles
+    legend.position = "top",  # Position legend at the top for better visibility
+    legend.text = element_text(size = 10)
+  ) +
+  scale_fill_manual(
+    values = c("Includes TC" = "#E69F00", "Does Not Include TC" = "#56B4E9"),  # Subtle color palette
+    labels = c("Includes TC", "Does Not Include TC")  # Corrected legend labels
+  ) +
+  expand_limits(y = c(0, max(concordance_values$Concordance) * 1.1))
 
 
 
@@ -152,6 +165,3 @@ x <- ggsurvplot(km_fit,pval=TRUE,risk.table=TRUE, conf.int = TRUE,
                 title = "Overall Survival Sarculator Score > 0.60")
 
 x
-
-
-

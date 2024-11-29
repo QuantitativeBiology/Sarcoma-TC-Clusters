@@ -17,6 +17,8 @@ cinsarc <- read.csv("RESULTS/clinical_cinsarc_paper.csv")
 
 sarculator <- read.csv("RESULTS/Sarculator_TCGA.csv", sep=";")
 
+clinical_data$FNCLCC_GRADE <- as.character(clinical_data$FNCLCC_GRADE)
+
 
 sarculator$Patient <- gsub("-", ".", sarculator$Patient, fixed = TRUE)
 
@@ -50,9 +52,7 @@ clinical_data <- clinical_data[!is.na(clinical_data$Patient),]
 
 clinical_data$CINSARC <- cinsarc$CINSARC
 
-
-
-cox <- coxph(Surv(Last_FU, as.numeric(Status)) ~ Histology + PaperHistology + CINSARC  + Cluster + FNCLCC_GRADE,  data = clinical_data)
+cox <- coxph(Surv(Last_FU, as.numeric(Status)) ~ Histology + PaperHistology  + Cluster + FNCLCC_GRADE,  data = clinical_data)
 
 temp <- cox.zph(cox) 
 print(temp)                  # display the results 
@@ -155,11 +155,6 @@ cox <- coxph(Surv(Last_FU, as.numeric(Status)) ~  SARCULATOR + Cluster + CINSARC
 #ggforest(cox, data = clinical_data, fontsize = 1)
 tc_cinsarculator <- cox$concordance["concordance"]
 
-# New models including age
-cox <- coxph(Surv(Last_FU, as.numeric(Status)) ~  SARCULATOR + Age, data = clinical_data)
-#ggforest(cox, data = clinical_data, fontsize = 1)
-sarculator_age <- cox$concordance["concordance"]
-
 cox <- coxph(Surv(Last_FU, as.numeric(Status)) ~  CINSARC + Age, data = clinical_data)
 #ggforest(cox, data = clinical_data, fontsize = 1)
 cinsarc_age <- cox$concordance["concordance"]
@@ -168,29 +163,15 @@ cox <- coxph(Surv(Last_FU, as.numeric(Status)) ~  Cluster + Age, data = clinical
 #ggforest(cox, data = clinical_data, fontsize = 1)
 cluster_age <- cox$concordance["concordance"]
 
-cox <- coxph(Surv(Last_FU, as.numeric(Status)) ~  SARCULATOR + CINSARC + Age, data = clinical_data)
-#ggforest(cox, data = clinical_data, fontsize = 1)
-cinsarculator_age <- cox$concordance["concordance"]
-
-cox <- coxph(Surv(Last_FU, as.numeric(Status)) ~  SARCULATOR + Cluster + Age, data = clinical_data)
-#ggforest(cox, data = clinical_data, fontsize = 1)
-tc_sarculator_age <- cox$concordance["concordance"]
-
-cox <- coxph(Surv(Last_FU, as.numeric(Status)) ~  SARCULATOR + Cluster + CINSARC + Age, data = clinical_data)
-#ggforest(cox, data = clinical_data, fontsize = 1)
-tc_cinsarculator_age <- cox$concordance["concordance"]
-
 # Compile all concordance values into a data frame
 concordance_values <- data.frame(
   Model = c("SARCULATOR", "SARCULATOR + CINSARC", "SARCULATOR + TC", 
             "SARCULATOR + TC + CINSARC", "CINSARC", "TC",
-            "SARCULATOR + Age", "CINSARC + Age", "TC + Age", 
-            "SARCULATOR + CINSARC + Age", "SARCULATOR + TC + Age", 
-            "SARCULATOR + TC + CINSARC + Age"),
+            "CINSARC + Age", "TC + Age" 
+            ),
   Concordance = c(sarculator, cinsarculator, tc_sarculator, 
                   tc_cinsarculator, cinsarc, cluster,
-                  sarculator_age, cinsarc_age, cluster_age,
-                  cinsarculator_age, tc_sarculator_age, tc_cinsarculator_age)
+                  cinsarc_age, cluster_age)
 )
 
 # Order the data frame by Concordance values
@@ -205,14 +186,27 @@ concordance_values$Label <- ifelse(grepl("TC", concordance_values$Model), "Inclu
 
 # Plot the ordered barplot with conditional coloring and a legend
 ggplot(concordance_values, aes(x = reorder(Model, Concordance), y = Concordance, fill = Label)) +
-  geom_bar(stat = "identity") +
-  geom_text(aes(label = round(Concordance, 2)), hjust = -0.1, size = 4) +
+  geom_bar(stat = "identity", width = 0.6) +  # Narrower bars for a clean look
+  geom_text(aes(label = round(Concordance, 2)), hjust = -0.1, size = 3.5, family = "Helvetica") +  # Consistent font style
   coord_flip() +
   xlab("Model") +
-  ylab("Concordance") +
+  ylab("Concordance Index") +
   ggtitle("Concordance Indexes of Different Models") +
-  theme_minimal() +
-  scale_fill_manual(values = c("Includes TC" = "darkorange1", "Does Not Include TC" = "skyblue"))  
+  theme_classic(base_size = 12, base_family = "Helvetica") +  # Clean, professional theme
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),  # Center-aligned title
+    axis.title.x = element_text(size = 12),
+    axis.title.y = element_text(size = 12),
+    axis.text = element_text(size = 10),
+    legend.title = element_blank(),  # Nature-style plots often omit legend titles
+    legend.position = "top",  # Position legend at the top for better visibility
+    legend.text = element_text(size = 10)
+  ) +
+  scale_fill_manual(
+    values = c("Includes TC" = "#E69F00", "Does Not Include TC" = "#56B4E9"),  # Subtle color palette
+    labels = c("Does Not Include TC", "Includes TC")  # Corrected legend labels
+  ) +
+  expand_limits(y = c(0, max(concordance_values$Concordance) * 1.1))
 
 table(clinical_data$FNCLCC_GRADE)
 

@@ -158,15 +158,15 @@ nes_mat <- nes_mat[names(gene_sets),]
 
 # adjusted_p_values_mat , nes_mat, plot heatmap with p values
 
-# Shime1x_syn_spearman1 <- Heatmap(as.matrix(nes_mat),
-#                                  heatmap_legend_param=list(title="NES", 
-#                                                            direction='vertical'),
-#                                  cluster_rows = TRUE,
-#                                  cluster_columns = TRUE,
-#                                  column_names_gp = gpar(col = NA)
-# 
-#                                  )
-# sx_syn1_spear <- draw(Shime1x_syn_spearman1, heatmap_legend_side='left')
+ Shime1x_syn_spearman1 <- Heatmap(as.matrix(nes_mat),
+                                  heatmap_legend_param=list(title="NES", 
+                                                            direction='vertical'),
+                                  cluster_rows = TRUE,
+                                  cluster_columns = TRUE,
+                                  column_names_gp = gpar(col = NA)
+ 
+                                  )
+sx_syn1_spear <- draw(Shime1x_syn_spearman1, heatmap_legend_side='left')
 
 
 
@@ -229,8 +229,3 @@ ggsurvplot(km_fit,pval=TRUE,
            legend.title = "Survival Analysis")
 
 write.csv(clinical_data,"RESULTS/TCGA-TC-Classified.csv")
-
-
-
-
-

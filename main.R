@@ -1,5 +1,9 @@
 # Main script to execute all steps sequentially
 
+if (!dir.exists("plots")) {
+  dir.create("plots")
+}
+
 # Define the list of scripts in execution order
 scripts <- c(
   "0.clinical_data_preprocessing.R",
