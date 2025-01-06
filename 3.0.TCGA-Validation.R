@@ -22,10 +22,6 @@ sarculator <- read.csv("RESULTS/Sarculator_TCGA.csv", sep=";")
 
 file_path <- "RESULTS/Consensus_Clusters_Genes.txt"
 
-cinsarc_genes <-  c("MKI67", "AURKA", "BIRC5", "CCNB1", "MYBL2", "ESR1", "PGR", "BCL2", 
-                    "SCUBE2", "MMP11", "CTSL2", "GRB7", "ERBB2", "ACTB", "GAPDH", "GUS", 
-                    "RPLP0", "TFRC", "GSTM1", "CD68", "BAG1")
-
 clinical_data <- clinical_data[clinical_data$Histology %in% c("Leiomyosarcoma, NOS", "Dedifferentiated liposarcoma"),]
 
 clinical_data$Patient <- gsub("-", ".", clinical_data$Patient, fixed = TRUE)
