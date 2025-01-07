@@ -22,6 +22,7 @@ sarculator <- read.csv("RESULTS/Sarculator_TCGA.csv", sep=";")
 
 file_path <- "RESULTS/Consensus_Clusters_Genes.txt"
 
+
 clinical_data <- clinical_data[clinical_data$Histology %in% c("Leiomyosarcoma, NOS", "Dedifferentiated liposarcoma"),]
 
 clinical_data$Patient <- gsub("-", ".", clinical_data$Patient, fixed = TRUE)
@@ -82,8 +83,7 @@ united_gene_sets <- list(
   c1 = c(c1_over, c1_under),
   c2 = c(c2_over, c2_under),
   c3 = c(c3_over, c3_under),
-  c4 = c(c4_over, c4_under),
-  cinsarc = cinsarc_genes
+  c4 = c(c4_over, c4_under)
 )
 
 gene_sets <- list(
@@ -94,8 +94,7 @@ gene_sets <- list(
   c3_over = c3_over,
   c3_under = c3_under,
   c4_over = c4_over,
-  c4_under = c4_under,
-  CINSARC = cinsarc_genes
+  c4_under = c4_under
 )
 
 # single sample GSEA
@@ -196,32 +195,26 @@ colnames(nes_mat) <- colnames(normalized)
 p_val_res <- data.frame(t(p_val_res))
 
 clinical_data <- clinical_data[!is.na(clinical_data$Last_FU),]
-#
-clinical_data <- clinical_data[clinical_data$Cluster != "c2",]
-clinical_data <- clinical_data[clinical_data$Cluster != "c4",]
 
 adjusted_p_values_mat <- adjusted_p_values_mat[row.names(adjusted_p_values_mat) %in% row.names(clinical_data),]
 
-
 clinical_data <- clinical_data[row.names(clinical_data) %in% row.names(adjusted_p_values_mat),]
 
-
-
-
-cox <- coxph(Surv(Last_FU, as.numeric(Status)) ~Histology + Cluster + PaperHistology + FNCLCC_GRADE,  data = clinical_data)
-
+cox <- coxph(Surv(Last_FU, as.numeric(Status)) ~Histology +PaperHistology + FNCLCC_GRADE + Cluster,  data = clinical_data)
 
 ggforest(cox,data=clinical_data, fontsize = 1)
 
-
 anova(cox)
 
+colnames(clinical_data)[colnames(clinical_data) == "Cluster"] <- "Transcriptomic_Cluster"
 
-km_fit <- survfit(Surv(Last_FU, as.numeric(Status)) ~ Cluster, data=clinical_data)
+km_fit <- survfit(Surv(Last_FU, as.numeric(Status)) ~ Transcriptomic_Cluster, data=clinical_data)
 
 ggsurvplot(km_fit,pval=TRUE,
            risk.table=TRUE,
            conf.int = TRUE, 
            legend.title = "Survival Analysis")
+
+colnames(clinical_data)[colnames(clinical_data) == "Transcriptomic_Cluster"] <- "Cluster"
 
 write.csv(clinical_data,"RESULTS/TCGA-TC-Classified.csv")
