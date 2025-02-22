@@ -76,7 +76,7 @@ Scripts in the `3.*.R` series validate the clusters using TCGA-SARC, integrating
 
 ## Citation
 
-To be filled
+Esperança-Martins, M., Vasques, H., Ravasqueira, M. S., Lemos, M. M., Fonseca, F., Coutinho, D., López, J. A., Huang, R. S. P., Dias, S., Gallego-Paez, L., Costa, L., Abecasis, N., Gonçalves, E., & Fernandes, I. (2025). Machine learning-based analysis of genomic and transcriptomic data unveils sarcoma clusters with superlative prognostic and predictive value. medRxiv. https://doi.org/10.1101/2025.01.31.25321492
 
 ---
 
