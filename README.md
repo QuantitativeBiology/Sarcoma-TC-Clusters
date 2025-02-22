@@ -9,7 +9,7 @@ This repository contains scripts and data for the analysis for the publication "
 
 Sarcomas are a heterogeneous group of cancers with distinct genetic profiles. This repository explores the identification and validation of transcriptomic clusters in sarcoma. 
 
-Note - Proprietary dataset from IPO used can be provided upon request
+Note - Proprietary dataset from [IPO](https://www.ipolisboa.min-saude.pt/en/) used can be provided upon request
 
 The repository leverages TCGA-SARC data and integrates external validation datasets to ensure reproducibility and robustness of the results.
 
