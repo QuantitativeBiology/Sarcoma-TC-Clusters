@@ -45,7 +45,7 @@ To reproduce the analyses in this repository, the following R packages are requi
 - `EnhancedVolcano`
 - `clusterProfiler`
 - `msigdbr`
-- `fgsea`
+- `corto`
 - `survival`
 - `survminer`
 
