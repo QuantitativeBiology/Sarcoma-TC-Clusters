@@ -51,13 +51,14 @@ To reproduce the analyses in this repository, the following R packages are requi
 
 Install them in R using the following command:
 ```R
-# BiocManager is not installed
+# if BiocManager not installed
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 
-# Install required packages
+# Install required Bioconductor packages
 BiocManager::install(c("limma", "edgeR", "ComplexHeatmap", 
-                        "EnhancedVolcano", "clusterProfiler", "fgsea"))
+                        "EnhancedVolcano", "clusterProfiler", "fgsea",
+                        "msigdbr", "corto", "survival", "survminer"))
 ```
 
 ---
