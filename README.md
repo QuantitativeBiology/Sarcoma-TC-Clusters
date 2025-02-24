@@ -51,8 +51,13 @@ To reproduce the analyses in this repository, the following R packages are requi
 
 Install them in R using the following command:
 ```R
-install.packages(c("tidyverse", "limma", "edgeR", "ComplexHeatmap", "EnhancedVolcano", 
-                   "clusterProfiler", "msigdbr", "fgsea", "survival", "survminer"))
+# BiocManager is not installed
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+# Install required packages
+BiocManager::install(c("limma", "edgeR", "ComplexHeatmap", 
+                        "EnhancedVolcano", "clusterProfiler", "fgsea"))
 ```
 
 ---
