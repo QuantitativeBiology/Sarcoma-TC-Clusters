@@ -3,7 +3,6 @@ library(limma)
 library(ComplexHeatmap)
 library(gplots)
 library(edgeR)
-library(fgsea)
 library(corto)
 library(survival)
 library(survminer)
@@ -195,6 +194,8 @@ colnames(nes_mat) <- colnames(normalized)
 p_val_res <- data.frame(t(p_val_res))
 
 clinical_data <- clinical_data[!is.na(clinical_data$Last_FU),]
+
+clinical_data<-clinical_data[clinical_data$Cluster %in% c("c1","c3"),]
 
 adjusted_p_values_mat <- adjusted_p_values_mat[row.names(adjusted_p_values_mat) %in% row.names(clinical_data),]
 
