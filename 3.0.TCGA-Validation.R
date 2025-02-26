@@ -10,7 +10,6 @@ library("PerformanceAnalytics")
 library(msigdbr)
 library(dplyr)
 
-
 RNA_data <- read.csv("RESULTS/TCGA-SARC.csv",row.names=1)
 
 clinical_data <- read.csv("RESULTS/TCGA-SARC-CLINICAL.csv",row.names=1)
@@ -20,7 +19,6 @@ cinsarc <- read.csv("RESULTS/clinical_cinsarc_paper.csv")
 sarculator <- read.csv("RESULTS/Sarculator_TCGA.csv", sep=";")
 
 file_path <- "RESULTS/Consensus_Clusters_Genes.txt"
-
 
 clinical_data <- clinical_data[clinical_data$Histology %in% c("Leiomyosarcoma, NOS", "Dedifferentiated liposarcoma"),]
 
@@ -41,7 +39,6 @@ keep <- filterByExpr(RNA_data)
 RNA_data <- RNA_data[keep,]
 
 Voom <- voom(RNA_data, plot = FALSE,normalize.method = "quantile")
-
 
 normalized <- Voom$E
 
@@ -144,7 +141,6 @@ colnames(adjusted_p_values_mat) <- colnames(normalized)
 
 
 nes_mat <- nes_mat[names(gene_sets),]
-
 
 # Observe Correlation between NES
 
