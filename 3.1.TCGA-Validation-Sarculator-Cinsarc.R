@@ -9,7 +9,6 @@ library("PerformanceAnalytics")
 library(msigdbr)
 library(dplyr)
 
-
 clinical_data <- read.csv("RESULTS/TCGA-TC-Classified.csv", row.names = 1)
 
 cinsarc <- read.csv("RESULTS/clinical_cinsarc_paper.csv")
@@ -20,7 +19,6 @@ clinical_data$FNCLCC_GRADE <- as.character(clinical_data$FNCLCC_GRADE)
 
 
 sarculator$Patient <- gsub("-", ".", sarculator$Patient, fixed = TRUE)
-
 
 row.names(sarculator) <- sarculator$Patient 
 
@@ -60,10 +58,7 @@ ggcoxzph(temp)
 
 ggforest(cox, data = clinical_data, fontsize = 1)
 
-
-
 all(rownames(clinical_data) == rownames(cinsarc))
-
 
 clinical_data$Cluster
 
@@ -80,8 +75,6 @@ ggsurvplot(fit,pval=TRUE,
            conf.int = TRUE, 
            legend.title = "Survival Analysis",
            ylab = "Metastatic Free Survival Probability")
-
-
 
 # Curves combining C1 and C3, not c1 and not c3, c1 and c3
 km_fit <- survfit(Surv(Last_FU, as.numeric(Status)) ~ CINSARC, data=clinical_data)
