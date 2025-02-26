@@ -6,6 +6,7 @@ if (!dir.exists("plots")) {
 
 # Define the list of scripts in execution order
 scripts <- c(
+  "0.install_packages.R",
   "0.clinical_data_preprocessing.R",
   "0.rna_normalization.R",
   "1.0.consensus_cluster.R",
