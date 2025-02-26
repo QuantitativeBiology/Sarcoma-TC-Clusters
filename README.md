@@ -36,30 +36,9 @@ The repository leverages TCGA-SARC data and integrates external validation datas
 
 ## Dependencies
 
-To reproduce the analyses in this repository, the following R packages are required:
+To install dependencies please run `0.install_packages.R` script
 
-- `tidyverse`
-- `limma`
-- `edgeR`
-- `ComplexHeatmap`
-- `EnhancedVolcano`
-- `clusterProfiler`
-- `msigdbr`
-- `corto`
-- `survival`
-- `survminer`
-
-Install them in R using the following command:
-```R
-# if BiocManager not installed
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-
-# Install required Bioconductor packages
-BiocManager::install(c("limma", "edgeR", "ComplexHeatmap", 
-                        "EnhancedVolcano", "clusterProfiler", "fgsea",
-                        "msigdbr", "corto", "survival", "survminer"))
-```
+This code was run in RStudio (Version 2024.04.1+748 (2024.04.1+748) 
 
 ---
 
